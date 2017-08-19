@@ -1,0 +1,36 @@
+<link rel="import" href="../date-display/date-display.html">
+<link rel="import" href="../moment-js/moment-js.html">
+<link rel="import" href="../polymer/polymer.html">
+<!--
+  `<count-up></count-up>` demo
+  @demo demo.html
+-->
+<dom-module id="count-up">
+  <template>
+    <date-display value="[[diff]]"></date-display>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "count-up",
+    properties:{
+      diff:{
+        type:Number,
+        value:0,
+      },
+      from:{
+        type:String,
+        value:"Sat Aug 19 2017 08:54:28 GMT+0100",
+      },
+    },
+    ready: function(undefined){
+      var that = this
+      var update = function () {
+        var value = moment(that.from)
+        that.diff = moment().diff(value)
+      }
+      var interval = setInterval(update, 1000)
+      update()
+    },
+  })
+</script>
