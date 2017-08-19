@@ -1,0 +1,19 @@
+{
+  "name": "count-up",
+  "version": "1.0.0",
+  "description": "counts up",
+  "main": "count-up.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.9.3",
+    "moment-js": "marcus7777/moment-js",
+    "date-display": "marcus7777/date-display"
+  },
+  "devDependencies": {
+    "iron-test-helpers": "*",
+    "web-component-tester": "^5.0.0"
+  }
+}
