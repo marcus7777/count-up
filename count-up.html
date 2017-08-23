@@ -14,6 +14,11 @@
   Polymer({
     is: "count-up",
     properties:{
+      count:{
+        type:Number,
+        computed: "by1000(diff)",
+        notify: true,
+      },
       diff:{
         type:Number,
         value:0,
@@ -22,11 +27,11 @@
         type:String,
         value:"Sat Aug 19 2017 08:54:28 GMT+0100",
       },
-      go: {
-        notify: true,
-      },
     },
-    ready: function(undefined){
+    by1000: function(n){
+      return Math.floor(n / 1000)
+    },
+    ready: function(){
       var that = this
       var update = function () {
         var value = moment(that.from)
