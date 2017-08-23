@@ -22,12 +22,16 @@
         type:String,
         value:"Sat Aug 19 2017 08:54:28 GMT+0100",
       },
+      go: {
+        notify: true,
+      },
     },
     ready: function(undefined){
       var that = this
       var update = function () {
         var value = moment(that.from)
         that.diff = moment().diff(value)
+        that.go = !that.go
       }
       var interval = setInterval(update, 1000)
       update()
